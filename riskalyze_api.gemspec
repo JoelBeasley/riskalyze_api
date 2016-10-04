@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'riskalyze_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'riskalyze-api'
+  spec.name          = 'riskalyze_api'
   spec.version       = RiskalyzeAPI::VERSION
   spec.authors       = ['Kevin Pheasey']
   spec.email         = ['kevin@kpheasey.com']
