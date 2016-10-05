@@ -66,7 +66,14 @@ module RiskalyzeAPI
     end
 
     def handle_response(response)
-      raise RequestError.new(response.response.msg, response.response) if response.code != 200
+      if response.code != 200
+        case response.code
+          when 401
+            raise AuthorizationError.new(response.response.msg, response.response)
+          else
+            raise RequestError.new(response.response.msg, response.response)
+        end
+      end
 
       response.parsed_response
     end
